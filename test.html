@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> test content </title>
+<style>
+#parent {
+   display: table;
+   width: 100%;
+}
+#form_msg {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
+</style>
+<script type="text/javascript">
+function smsForm(form) {
+ state = form.state.value;
+ plate = form.plate.value;
+ body="&#64;"+plate+","+state+" please enter your message: "
+ window.location.href=`sms://+4155551212?body=${body}`
+}
+</script>
+<body>
+<div id="parent">
+  <form id="form_msg" method="post" onsubmit="return smsForm(this);">
+    <span>State</span><br/>
+      <input id="state" type="text" name="state" autocomplete="shipping address-level1" value="CA"></input></br>
+      <span>Plate</span><br/>
+      <input id="plate" type="text" name="plate" value="VINAY1"></input><br/>
+      <input type="submit" value="Submit">
+   </form>
+</div>
+</body>
+</html>
