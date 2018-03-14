@@ -18,12 +18,12 @@ function smsForm(form) {
  state = form.state.value;
  plate = form.plate.value;
  body="&#64;"+plate+","+state+" please enter your message: "
- window.location.href=`sms://+4155551212?body=${body}`
+ window.location.href=`mailto://+4155551212?body=${body}`
 }
 </script>
 <body>
 <div id="parent">
-  <form id="form_msg" method="post" onsubmit="return smsForm(this);">
+  <form id="form_msg" action="" method="get" onsubmit="return smsForm(this);">
     <span>State</span><br/>
       <input id="state" type="text" name="state" autocomplete="shipping address-level1" value="CA"></input></br>
       <span>Plate</span><br/>
